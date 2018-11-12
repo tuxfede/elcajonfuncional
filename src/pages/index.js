@@ -11,15 +11,14 @@ export default ({ data }) => (
         <title>{data.site.siteMetadata.title}</title>
         <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
       </Helmet>
-      <h1>Amazing Pandas Eating Things</h1>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      <h1>Últimas entradas del blog</h1>
+      <h4>{data.allMarkdownRemark.totalCount} Entrada/s</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
-            <h3>
-              {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-            </h3>
-            <p>{node.excerpt}</p>
+            <h3 style={{ display: "inline" }}>{node.frontmatter.title}</h3>
+            <span> — {node.frontmatter.date}</span>
+            <p style={{ color: "dimgray" }}>{node.excerpt}</p>
           </Link>
         </div>
       ))}
@@ -44,11 +43,11 @@ export const query = graphql`
           excerpt
         }
       }
-    },
-	site {
+    }
+    site {
       siteMetadata {
-        title,
-		siteUrl
+        title
+        siteUrl
       }
     }
   }

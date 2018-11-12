@@ -8,7 +8,7 @@ const ListLink = props => (
     }}
   >
     <Link to={props.to}>
-      <h4>{props.children}</h4>
+      <p>{props.children}</p>
     </Link>
   </li>
 );

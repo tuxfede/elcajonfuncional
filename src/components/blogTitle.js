@@ -34,7 +34,7 @@ export default () => {
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                width: rhythm(3),
+                width: rhythm(4),
                 height: rhythm(3)
               }}
             />
