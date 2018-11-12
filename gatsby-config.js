@@ -24,6 +24,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+		  'gatsby-remark-copy-linked-files',
 		  `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
@@ -35,6 +36,12 @@ module.exports = {
               linkImagesToOriginal: true,
               showCaptions: true
             }
+          },
+		  {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
