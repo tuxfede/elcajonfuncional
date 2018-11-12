@@ -8,8 +8,8 @@ export default ({ data }) => (
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <title>{data.site.siteMetadata.title}</title>
+        <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
       </Helmet>
       <h1>Amazing Pandas Eating Things</h1>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
@@ -43,6 +43,12 @@ export const query = graphql`
           }
           excerpt
         }
+      }
+    },
+	site {
+      siteMetadata {
+        title,
+		siteUrl
       }
     }
   }

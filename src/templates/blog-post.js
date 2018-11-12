@@ -5,12 +5,13 @@ import { Helmet } from "react-helmet";
 
 export default ({ data }) => {
   const post = data.markdownRemark;
+  console.log(data);
   return (
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <title>{data.site.siteMetadata.title} - {post.frontmatter.title}</title>
+        <link rel="canonical" href={post.fields.slug} />
       </Helmet>
       <div>
         <h1>{post.frontmatter.title}</h1>
@@ -26,6 +27,15 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+	  fields {
+		slug
+	  }
+    },
+	site {
+      siteMetadata {
+        title,
+		siteUrl
       }
     }
   }
