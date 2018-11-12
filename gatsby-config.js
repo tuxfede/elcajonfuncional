@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `El cajón funcional`
+    title: `El cajón funcional`,
+    author: 'Federico López Arenillas',
+    description: 'Snippets, librerías, utilidades, hardware',
+    siteUrl: 'https://elcajonfuncional.netlify.com'
   },
   plugins: [
     {
