@@ -29,6 +29,13 @@ module.exports = {
           "gatsby-remark-copy-linked-files",
           `gatsby-remark-smartypants`,
           {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow noopener noreferrer"
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               // It's important to specify the maxWidth (in pixels) of
@@ -102,6 +109,7 @@ module.exports = {
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-feed"
+    "gatsby-plugin-feed",
+    `gatsby-plugin-netlify` // make sure to put last in the array
   ]
 };
