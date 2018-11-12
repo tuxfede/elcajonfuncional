@@ -21,6 +21,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+		  `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
