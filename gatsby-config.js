@@ -1,9 +1,11 @@
+let siteUrl = "https://elcajonfuncional.netlify.com";
+
 module.exports = {
   siteMetadata: {
     title: `El cajón funcional`,
-    author: 'Federico López Arenillas',
-    description: 'Snippets, librerías, utilidades, hardware',
-    siteUrl: 'https://elcajonfuncional.netlify.com'
+    author: "Federico López Arenillas",
+    description: "Snippets, librerías, utilidades, hardware",
+    siteUrl: siteUrl
   },
   plugins: [
     {
@@ -24,8 +26,8 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-		  'gatsby-remark-copy-linked-files',
-		  `gatsby-remark-smartypants`,
+          "gatsby-remark-copy-linked-files",
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -37,11 +39,11 @@ module.exports = {
               showCaptions: true
             }
           },
-		  {
+          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -84,7 +86,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "El cajón funcional",
-        short_name: "elcajonfuncional",
+        short_name: "funcbox blog",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
@@ -92,8 +94,14 @@ module.exports = {
         icon: "src/images/caja.png" // This path is relative to the root of the site.
       }
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: siteUrl
+      }
+    },
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
-	"gatsby-plugin-feed",
+    "gatsby-plugin-feed"
   ]
 };

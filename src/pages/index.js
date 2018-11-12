@@ -9,7 +9,7 @@ export default ({ data }) => (
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
-        <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
+        <html lang="es" />
       </Helmet>
       <h1>Últimas entradas del blog</h1>
       <h4>{data.allMarkdownRemark.totalCount} Entrada/s</h4>

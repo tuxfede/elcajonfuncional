@@ -10,8 +10,10 @@ export default ({ data }) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{data.site.siteMetadata.title} - {post.frontmatter.title}</title>
-        <link rel="canonical" href={post.fields.slug} />
+        <title>
+          {data.site.siteMetadata.title} - {post.frontmatter.title}
+        </title>
+        <html lang="es" />
       </Helmet>
       <div>
         <h1>{post.frontmatter.title}</h1>
@@ -28,14 +30,14 @@ export const query = graphql`
       frontmatter {
         title
       }
-	  fields {
-		slug
-	  }
-    },
-	site {
+      fields {
+        slug
+      }
+    }
+    site {
       siteMetadata {
-        title,
-		siteUrl
+        title
+        siteUrl
       }
     }
   }

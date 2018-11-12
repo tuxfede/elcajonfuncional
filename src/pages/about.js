@@ -1,19 +1,28 @@
 import React from "react";
-import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
+import { rhythm } from "../utils/typography";
 import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import aboutPic from "../images/about-federico-lopez-arenillas.jpg";
 
 export default ({ data }) => {
   return (
-    <div style={{ color: `teal` }}>
+    <Layout>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
-        <link rel="canonical" href={data.sitePage.path} />
+        <html lang="es" />
       </Helmet>
-      <Link to="/">Home</Link>
-      <p> Curriculum vitae!</p>
-    </div>
+      <h1>Sobre mí</h1>
+      <img
+        src={aboutPic}
+        alt="Currículum gráfico de Federico López Arenillas"
+        style={{
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0
+        }}
+      />
+    </Layout>
   );
 };
 
