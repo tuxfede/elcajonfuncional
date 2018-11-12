@@ -76,8 +76,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "El cajón funcional",
+        short_name: "elcajonfuncional",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
@@ -86,6 +86,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet"
+    "gatsby-plugin-react-helmet",
+	 `gatsby-plugin-feed`,
   ]
 };
