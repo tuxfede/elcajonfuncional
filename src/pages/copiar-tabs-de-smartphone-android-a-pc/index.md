@@ -26,13 +26,13 @@ Para que se muestren **todas** las pestañas abiertas, recargarlas en el móvil.
 
 4. Volver a conectar móvil al ordenador.
 
-5. Abrir chrome, lanzar chrome dev tools. 
+5. Abrir chrome, lanzar chrome dev tools.
 
-6.  pulsar el menú de tres puntos a la derechza, seleccionar 'undock' para que devtools se muestre en ventanas separadas
+6. pulsar el menú de tres puntos a la derechza, seleccionar 'undock' para que devtools se muestre en ventanas separadas
 
-7. pulsar el menú de tres puntos, more tools -> remote tools. 
+7. pulsar el menú de tres puntos, more tools -> remote tools.
 
-8. En el móvil, aceptar el dispositivo 
+8. En el móvil, aceptar el dispositivo
 
 9. Abrir un nuevo devtools (desde el devtool original, pulsar control j)
 
@@ -40,26 +40,31 @@ Para que se muestren **todas** las pestañas abiertas, recargarlas en el móvil.
 
 11. Ejecutar el siguiente script:
 
-    ```javascript
-    tabs = document.querySelectorAll('div /deep/ div /deep/ div /deep/ div /deep/ div /deep/ .device-page-list .vbox')
-    str = '';
-    for (i=0;i<tabs.length;i++){
-      if (tabs[i].querySelector('.device-page-url .devtools-link') != null){
-        str += '- ['+tabs[i].querySelector('.device-page-title').textContent + '](' + tabs[i].querySelector('.device-page-url .devtools-link').attributes.href.value +')\n'
+    ```javascript{1,3}{numberLines: true}
+    tabs = document.querySelectorAll(
+      "div /deep/ div /deep/ div /deep/ div /deep/ div /deep/ .device-page-list .vbox"
+    );
+    str = "";
+    for (i = 0; i < tabs.length; i++) {
+      if (tabs[i].querySelector(".device-page-url .devtools-link") != null) {
+        str +=
+          "- [" +
+          tabs[i].querySelector(".device-page-title").textContent +
+          "](" +
+          tabs[i].querySelector(".device-page-url .devtools-link").attributes
+            .href.value +
+          ")\n";
       } else {
-        console.log(tabs[i])
+        console.log(tabs[i]);
       }
     }
-    copy(str)
+    copy(str);
     ```
 
 12. Todos los enlaces se habrán copiado en el portapapeles.
-
-
 
 ## Referencias:
 
 Instrucciones: https://github.com/lmmx/devnotes/wiki/Export-all-Chrome-tabs-on-Android
 
 Stackoverflow: https://android.stackexchange.com/questions/56635/how-can-i-export-the-list-of-open-chrome-tabs
-
