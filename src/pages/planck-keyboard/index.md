@@ -1,12 +1,15 @@
+---
+title: "Teclado Plank"
+date: "2018-11-10"
+---
+
 # Teclado planck
 
 ## Pre-requisitos Windows
 
 1. Instalar msys2
-2. Actualizar msys2:  `$ pacman -Syu `
+2. Actualizar msys2: `$ pacman -Syu`
 3. Instalar git: `$ pacman -S git`
-
-
 
 ## Descargar repositorio
 
@@ -14,8 +17,6 @@
 $ git clone https://github.com/qmk/qmk_firmware.git
 $ cd qmk_firmware
 ```
-
-
 
 ## Instalar dependencias
 
@@ -25,15 +26,11 @@ $ ./util/qmk_install.sh
 
 > Responder 'Yes' y 'All' a todas las cuestiones
 
-
-
 ## Compilar firmware por defecto
 
 ```bash
 $ make planck/rev5:default
 ```
-
-
 
 ## Crear firmware personalizado
 
@@ -55,7 +52,7 @@ A continuación, cambiar el teclado como se desee.
 
 ### Keycodes
 
-> Referencia: 
+> Referencia:
 >
 > - [keycodes](https://docs.qmk.fm/#/keycodes)
 > - [keycodes básicos](https://docs.qmk.fm/#/keycodes_basic)
@@ -63,13 +60,9 @@ A continuación, cambiar el teclado como se desee.
 
 Los keycodes básicos se basan en la especificación USB ([enlace](https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf)), con la excepción de `KC_NO`, `KC_TRNS` y el rango `0xA5-DF`.
 
-
-
 ### Features
 
 > Referencia: [features](https://docs.qmk.fm/#/features)
-
-
 
 #### Advanced keycodes
 
@@ -132,43 +125,35 @@ La función anterior activa left control y left shift cuando se presiona, y env�
 
 QMK incluye los siguientes Mod-Tap por defecto:
 
-| Key          | Aliases                                 | Description                                                  |
-| ------------ | --------------------------------------- | ------------------------------------------------------------ |
-| `LCTL_T(kc)` | `CTL_T(kc)`                             | Left Control when held, `kc` when tapped                     |
-| `RCTL_T(kc)` |                                         | Right Control when held, `kc` when tapped                    |
-| `LSFT_T(kc)` | `SFT_T(kc)`                             | Left Shift when held, `kc` when tapped                       |
-| `RSFT_T(kc)` |                                         | Right Shift when held, `kc` when tapped                      |
-| `LALT_T(kc)` | `ALT_T(kc)`                             | Left Alt when held, `kc` when tapped                         |
-| `RALT_T(kc)` | `ALGR_T(kc)`                            | Right Alt when held, `kc` when tapped                        |
-| `LGUI_T(kc)` | `LCMD_T(kc)`, `RWIN_T(kc)`, `GUI_T(kc)` | Left GUI when held, `kc` when tapped                         |
-| `RGUI_T(kc)` | `RCMD_T(kc)`, `RWIN_T(kc)`              | Right GUI when held, `kc` when tapped                        |
-| `C_S_T(kc)`  |                                         | Left Control and Shift when held, `kc` when tapped           |
-| `MEH_T(kc)`  |                                         | Left Control, Shift and Alt when held, `kc`when tapped       |
-| `LCAG_T(kc)` |                                         | Left Control, Alt and GUI when held, `kc`when tapped         |
-| `RCAG_T(kc)` |                                         | Right Control, Alt and GUI when held, `kc`when tapped        |
+| Key          | Aliases                                 | Description                                                                                                                                 |
+| ------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `LCTL_T(kc)` | `CTL_T(kc)`                             | Left Control when held, `kc` when tapped                                                                                                    |
+| `RCTL_T(kc)` |                                         | Right Control when held, `kc` when tapped                                                                                                   |
+| `LSFT_T(kc)` | `SFT_T(kc)`                             | Left Shift when held, `kc` when tapped                                                                                                      |
+| `RSFT_T(kc)` |                                         | Right Shift when held, `kc` when tapped                                                                                                     |
+| `LALT_T(kc)` | `ALT_T(kc)`                             | Left Alt when held, `kc` when tapped                                                                                                        |
+| `RALT_T(kc)` | `ALGR_T(kc)`                            | Right Alt when held, `kc` when tapped                                                                                                       |
+| `LGUI_T(kc)` | `LCMD_T(kc)`, `RWIN_T(kc)`, `GUI_T(kc)` | Left GUI when held, `kc` when tapped                                                                                                        |
+| `RGUI_T(kc)` | `RCMD_T(kc)`, `RWIN_T(kc)`              | Right GUI when held, `kc` when tapped                                                                                                       |
+| `C_S_T(kc)`  |                                         | Left Control and Shift when held, `kc` when tapped                                                                                          |
+| `MEH_T(kc)`  |                                         | Left Control, Shift and Alt when held, `kc`when tapped                                                                                      |
+| `LCAG_T(kc)` |                                         | Left Control, Alt and GUI when held, `kc`when tapped                                                                                        |
+| `RCAG_T(kc)` |                                         | Right Control, Alt and GUI when held, `kc`when tapped                                                                                       |
 | `ALL_T(kc)`  |                                         | Left Control, Shift, Alt and GUI when held, `kc`when tapped - more info [here](http://brettterpstra.com/2012/12/08/a-useful-caps-lock-key/) |
-| `SGUI_T(kc)` | `SCMD_T(kc)`, `SWIN_T(kc)`              | Left Shift and GUI when held, `kc` when tapped               |
-| `LCA_T(kc)`  |                                         | Left Control and Alt when held, `kc` when tapped             |
-
-
+| `SGUI_T(kc)` | `SCMD_T(kc)`, `SWIN_T(kc)`              | Left Shift and GUI when held, `kc` when tapped                                                                                              |
+| `LCA_T(kc)`  |                                         | Left Control and Alt when held, `kc` when tapped                                                                                            |
 
 #### One Shot Keys (OSM)
 
 Son teclas que permanecen activas hasta que se pulsa la siguiente. Por ejemplo: OSM(MOD_LSFT) deja pulsado left shift. Cuando se pulsa después la tecla 'a', el ordenador recibe 'A'
 
-
-
 #### Auto shift
 
 Pulsar una tecla y aparece en minúscula. PUlsarla algo más de tiempo y aparece en mayúscula.
 
-
-
 #### Combos
 
 Permite pulsar muchas telcas a la vez y emitir una diferente. Por ejemplo A y S generan ESC.
-
-
 
 #### Macros
 
@@ -176,21 +161,15 @@ Permite crear macros temporales al vuelo, o fijas.
 
 Fijas: SEND_STRING()
 
-
-
 #### Grave Escape
 
 Escape y ~ en el mismo símbolo. Cuando se pulsa escape junto con shift o GUI envía KC_GRAVE. Cuando se pulsa sola envía ESC.
 
 `KC_GESC`
 
-
-
 #### Key Lock
 
 Key lock deja pulsada la siguiente tecla por tí. Cuando se pulsa de nuevo, la tecla es liberad. Por ejemplo, para fijar mayúsculas: KC_LOCK y entonces shift.
-
-
 
 #### Mousekeys
 
@@ -213,15 +192,11 @@ Key lock deja pulsada la siguiente tecla por tí. Cuando se pulsa de nuevo, la t
 | `KC_MS_ACCEL1`   | `KC_ACL1` | Set mouse acceleration to 1 |
 | `KC_MS_ACCEL2`   | `KC_ACL2` | Set mouse acceleration to 2 |
 
-
-
 #### Leader key (KC_LEAD)
 
 Igual que en VIM
 
 En lugar de pulsar Alt+Shit+W, permite pulsarlas como secuencia! Pulsas Leader key, seguida de W seguido de C y haces que se comporte como alt shift w
-
-
 
 #### Space cadet shift
 
@@ -234,8 +209,6 @@ En cambio, si mantienes pulsado, funciona como normalmente.
 | `KC_LSPO` | Left Shift when held, `(` when tapped  |
 | `KC_RSPC` | Right Shift when held, `)` when tapped |
 
-
-
 #### Space cadet shift enter
 
 Cuando pulsas y sueltas shift, se comporta como enter; cuando sólo se pulsa, como shift.
@@ -244,19 +217,13 @@ Cuando pulsas y sueltas shift, se comporta como enter; cuando sólo se pulsa, co
 | ----------- | ---------------------------------------- |
 | `KC_SFTENT` | Right Shift when held, Enter when tapped |
 
-
-
 #### Tap dance
 
 Una misma tecla para varias cosas. Si se pulsa una vez, envía un 'kc'; si se pulsa dos veces, envía un 'kc' diferente.
 
-
-
 #### Envío de unicode
 
 QMK permite enviar unicode
-
-
 
 ## Compilar el nuevo firmware
 
@@ -264,17 +231,13 @@ QMK permite enviar unicode
 $ make planck/rev5:tuxfede
 ```
 
-
-
 ## Flashear el teclado
 
 > Importante: No desconectar el teclado durante el proceso de flasheo
 
-
-
 ### QMK Toolbox
 
-QMK Tookbox es una GUI que permite flashear el teclado de forma fácil. 
+QMK Tookbox es una GUI que permite flashear el teclado de forma fácil.
 
 Disponible para windows y macOs:
 
@@ -282,7 +245,7 @@ Disponible para windows y macOs:
 
 Para flashear:
 
-1. Localizar el firmware (fichero <keyboard_name>_<keymap_name>.{bin,.hex})
+1. Localizar el firmware (fichero <keyboard*name>*<keymap_name>.{bin,.hex})
 2. Arrastrar el archivo al inputbox 'Local file' de la GUI de QMK Toolbox
 3. Poner el teclado en DFU MOde.
    1. En QMK, existen los siguientes métodos por defecto (probarlos en orden):
@@ -294,8 +257,6 @@ Para flashear:
    2. Si el teclado ha entrado correctamente en modo DFU, aparecerá el siguiente mensaje en QMK Toolbox: `DFU device connected`
 4. Pulsar el botón `Flash`
 5. Comprobar el resultado `success`
-
-
 
 ### Desde la línea de comandos
 
@@ -311,16 +272,12 @@ Este comando buscará el teclado conectado cada 5 segundos hasta que lo encuentr
 
 Una vez que se encuentre el teclado, se resetará el teclado y se flasheará la memoria.
 
-
-
 ## Probar el teclado
 
-- [Switch Hitter](https://elitekeyboards.com/switchhitter.php) - Windows 
+- [Switch Hitter](https://elitekeyboards.com/switchhitter.php) - Windows
 - [Keyboard Viewer](https://www.imore.com/how-use-keyboard-viewer-your-mac) - Mac
 - [Keyboard Tester](http://www.keyboardtester.com/) - Web
 - [Keyboard Checker](http://keyboardchecker.com/) - Web
-
-
 
 ## Mis cambios
 
@@ -336,13 +293,8 @@ fn por hype
 
 ctrl por capslock
 
-space shift cadets    
-
-
-
-
+space shift cadets
 
 ### Cambios propuestos
 
 space cadet shift
-

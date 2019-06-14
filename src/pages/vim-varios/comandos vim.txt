@@ -1,0 +1,89 @@
+VIM
+
+Formato de comandos:
+  <number><command><text object or motion>
+
+Objetos
+[w]ord  aw == a word   iw == inner word
+[s]entence
+[p]aragraph
+[a"] a double quotted string
+[a'] a single quoted string
+[i"] inner double quotted string
+[i'] inner double quoted string
+[a)] a parenthesized block
+[i)] inner parenthesized block
+[a]] a bracketed block
+[i]] inner bracketed block
+[a}] a brace block === aB
+[i}] inner brace block === iB
+[at] a tag block
+[it] inner tag block
+[a>] a single tag
+[i>] inner single tag
+
+MODES:
+[Esc]    Go to default mode
+[i]nsert mode before cursos
+[a]fter  insert mode after cursor
+[I]nsert mode at start of line
+[A]      insert mode at end of line
+[o]      new line above
+[v]isual
+
+INSERT MODE
+[CONTROL]+O Ejecuta un único comando y vuelve al modo INSERTAR
+[CONTROL]+R " Pega último elemento copiado
+
+VISUAL MODE
+[i"] [in]side  selecciona el interior del segundo parámetro
+[a'] [a]round  selecciona el envoltorio y el interior del segundo parámetro
+
+DEFAULT MODE
+[:e filename]   open filename
+[:w]            write file
+[:w filename]   write as filename
+[:sav filename] write as filename and open buffer
+[:sh]           run shell until exit
+[:!comando]     Run command
+[y]ank          Copy (tirar)
+[p]aste         Paste
+[d]elete        (dd to delete line)
+[c]hange        Change and delete
+[u]ndo          undo
+[CONTROL]+R     redo
+[.]             repeat command
+[CONTROL]+W W   change window
+
+Movimientos:
+[e]nd       of current word
+[b]eginning of current word
+[w]ord      begginng of next word
+[^]         first non white character
+[0]         start of line
+[$]         end of line
+[CONTROL]+F foreward page
+[CONTROL]+B backward page
+[gg]        go to top
+[G]         go to eof
+[gd]        go to local declaration of variable/function
+[gD]        go to global declaration of variable/function
+[:100]      Go to line 100
+[%]         Go to next block delimiter
+
+Marcadores:
+[ma] set marker named 'a'
+['a] go to marker a
+
+Indent
+[>>]
+[<<]  
+
+PLUGINS
+Plugin ctrlp: Asignar ,c
+Plugin surround: cambiar " por ', etc.
+Plugin syntastic: análisis junto con tern, eslint, etc.
+
+
+
+
