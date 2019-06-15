@@ -3,10 +3,6 @@ title: "Neovim básico"
 date: "2018-06-10"
 ---
 
-
-
-# Neovim
-
 ## Instalación
 
 Fichero .zshrc
@@ -27,12 +23,10 @@ alias vim=nvim
 alias vi=nvim
 
 #neovim as preferred editor
-export VISUAL=nvim 
+export VISUAL=nvim
 ```
 
-
-
-Windows: 
+Windows:
 
 Crear Variables de entorno:
 
@@ -43,14 +37,14 @@ VIMDATA=%userprofile%\AppData\Local\nvim\
 
 Tras ello, usar msys2 shell para ejecutar los compandos:
 
-Configurar neovim para que carge configuración de vim. 
+Configurar neovim para que carge configuración de vim.
 
 ```bash
 mkdir -p $VIMCONFIG/pack/bundle/start
 mkdir -p $VIMDATA/undo
 ```
 
-En fichero $VIMCONFIG/init.vim
+En fichero \$VIMCONFIG/init.vim
 
 ```bash
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
@@ -58,15 +52,11 @@ let &packpath = &runtimepath
 source ~/.vim/vimrc
 ```
 
-
-
 Habilitar python para permitir plugins python.
 
 ```
 pip3 install --upgrade neovim
 ```
-
-
 
 Validar instalación de provider
 
@@ -74,15 +64,11 @@ Validar instalación de provider
 :py3 print('hello')
 ```
 
-
-
 Actualizar python
 
 ```
 python -m pip3 install --upgrade pip3
 ```
-
-
 
 Habilitar neovim-remote
 
@@ -90,8 +76,6 @@ Habilitar neovim-remote
 pip3 install --upgrade neovim-remote
 nvr -h
 ```
-
-
 
 ## Plugins
 
@@ -116,39 +100,33 @@ nnoremap Q :Hello<CR>
 :Hello
 ```
 
-
-
 ### Crear plugin
 
 carpetas:
 
 demo-plugin
 
-​    doc
+​ doc
 
-​        demo.txt
+​ demo.txt
 
-​    plugin
+​ plugin
 
-​        demo.vim
+​ demo.vim
 
 Instalar un directorio === agregarlo a runtimepath
-
-
 
 ### Crear paquetes
 
 Un paquete es un directorio que contiene uno o más plugins:
 
-$VIMCONFIG/pack
+\$VIMCONFIG/pack
 
 El paquete debe contener un subdirectorio llamado start, donde se instalarán los plugins que se quieren cargar al inicio:
 
-Al arrancar, vim busca en $VIMCONFIG/pack/*/start/
+Al arrancar, vim busca en \$VIMCONFIG/pack/\*/start/
 
 Al instalar un plugin nuevo: :helptags
-
-
 
 ### Instalr plugin vim-unimpaired
 
@@ -159,7 +137,7 @@ https://github.com/tpope/vim-unimpaired
 ```
 mkdir -p $VIMCONFIG/pack/bundle/start
 cd $VIMCONFIG/pack/bundle/start
-git clone https://github.com/tpope/vim-unimpaired.git 
+git clone https://github.com/tpope/vim-unimpaired.git
 ```
 
 Para cargar la ayuda, desde nvim:
@@ -169,14 +147,12 @@ Para cargar la ayuda, desde nvim:
 :help unimpaired
 ```
 
-
-
 ### Plugins opcionales
 
 ```
 mkdir -p $VIMCONFIG/pack/bundle/opt
 cd $VIMCONFIG/pack/bundle/opt
-git clone https://github.com/tpope/vim-scriptease.git 
+git clone https://github.com/tpope/vim-scriptease.git
 ```
 
 Desde vim:
@@ -186,8 +162,6 @@ Desde vim:
 :packadd vim-scriptease
 :echo join(split(&runtimepath, ','), "\n")
 ```
-
-
 
 ### Actualizar plugins
 
@@ -202,7 +176,7 @@ plugin para gestionar plugins:"minpac"
 ```
  mkdir -p $VIMCONFIG/pack/minpac/opt
   cd $VIMCONFIG/pack/minpac/opt
-   git clone https://github.com/k-takata/minpac.git 
+   git clone https://github.com/k-takata/minpac.git
 ```
 
 CArgarlo al iniciar:
@@ -226,8 +200,8 @@ call minpac#init()
 en ambos
 
 ```
-:source % 
-:echo join(split(&runtimepath, ','), "\n") 
+:source %
+:echo join(split(&runtimepath, ','), "\n")
 ```
 
 Uso de minpac:
@@ -241,10 +215,10 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 Para actualizar paquetes, desde nvim
 
- ```
+```
 :call minpac#update()
 :messages
- ```
+```
 
 Tras ello, reiniciar nvim para que se carguen.
 
@@ -261,15 +235,13 @@ command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 ```
 
-
-
 ## Gestión de archivos
 
 #### fuzzy finder
 
 instalar aplicación fzf:
 
-Windows 
+Windows
 
 ```
 scoop install fzf
@@ -315,7 +287,7 @@ Como usarlo:
 6. <C-v> para abrir dividido verticalmente
 7. <C-k> y <C-j> para seleccionar entre resultados
 
-Hacer que fzf no busque en archivos ignorados por .gitignore: 
+Hacer que fzf no busque en archivos ignorados por .gitignore:
 
 export FZF_DEFAULT_COMMAND='git ls-files'
 
@@ -325,21 +297,17 @@ export FZF_DEFAULT_COMMAND='rg --files'
 
 (crear variable de entorno sin comillas)
 
-
-
 Fzf también permite gestionar buffers, históricos, etc!!
 
 Para ello, usar el otro plugin https://github.com/junegunn/fzf.vim
 
 (agregar a minpac)
 
-
-
 #### Projectionits
 
 Permite agrupar archivos en base a un 'concepto' y asignarles una etiqueta. Por ejemplo: todos los archivos de. Por ejemplo, todos los archivos que contengan la cadena 'model' estarán asociados a la etiqueta 'model'. De esta forma, podremos buscar abrir archivos que cumplen con la etiqueta.
 
-Repositorio para  minpac:
+Repositorio para minpac:
 
 ```
 tpope/vim-projectionist
@@ -373,10 +341,6 @@ Ejemplo (se puede usar Tab para autocompletar)
 :Vmodel comment
 ```
 
-
-
-
-
 #### Cambiar a archivo .h/cpp/test usando el plugin projectionist
 
 ```
@@ -392,6 +356,3 @@ En carpeta raíz del proyecto, crear
     app/models
 }
 ```
-
-
-

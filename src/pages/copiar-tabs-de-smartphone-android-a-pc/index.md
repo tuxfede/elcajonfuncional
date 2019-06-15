@@ -3,8 +3,6 @@ title: "Copiar pestañas de móvil a ordenador"
 date: "2018-11-01"
 ---
 
-# Copiar todas las pestañas de movil a ordenador
-
 ## Opción 1. Usando sincronización de cuenta google
 
 En chrome de escritorio, abrir marcadores, seleccionar otros dispositivos y ahí aparecerán las últimas pestañas abiertas.
