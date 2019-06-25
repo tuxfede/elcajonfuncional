@@ -3,6 +3,10 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import { Helmet } from "react-helmet";
 
+var postElementStyle = {
+  marginBottom: '2em'
+};
+
 export default ({ data }) => (
   <Layout>
     <div>
@@ -14,7 +18,7 @@ export default ({ data }) => (
       <h1>Últimas entradas del blog</h1>
       <h4>{data.allMarkdownRemark.totalCount} Entrada/s</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
+        <div key={node.id} style={postElementStyle}>
           <Link to={node.fields.slug}>
             <h3 style={{ display: "inline" }}>{node.frontmatter.title}</h3>
             <span> — {node.frontmatter.date}</span>

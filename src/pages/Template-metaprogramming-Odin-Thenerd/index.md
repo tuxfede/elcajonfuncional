@@ -3,7 +3,7 @@ title: "Template metaprogramming con Odin Thenerd"
 date: "2019-04-01"
 ---
 
-# Template metaprogramming con Odin Thenerd
+## Referencia
 
 [Blog](http://odinthenerd.blogspot.com/
 
