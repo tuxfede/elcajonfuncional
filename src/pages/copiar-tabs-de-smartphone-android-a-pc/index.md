@@ -13,7 +13,7 @@ Para que se muestren **todas** las pestañas abiertas, recargarlas en el móvil.
 
 1.  Instalar drivers adb.
 
-    1. Buscar en google: Xiamo mi a1 adb drivers
+    1. Buscar en google: Xiamo mi a1 adb drivers ([enlace](http://www.mediafire.com/file/vuwg5k4ut428h78/adb-setup-1.4.3.exe))
 
 2.  Habilitar la depuración por USB
 
@@ -50,6 +50,9 @@ Para que se muestren **todas** las pestañas abiertas, recargarlas en el móvil.
     }
     }
     copy(str)
+
+    ```
+
     ```
 
 12. Todos los enlaces se habrán copiado en el portapapeles.
